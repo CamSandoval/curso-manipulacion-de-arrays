@@ -2,6 +2,7 @@
 const numbers = [1,30,43,29,10,13];
 
 //Ejemplo con for
+  //Queremos creaer un algoritmo que vea si todos los elemstos del arrary son menores que 40
 let rta = true;
 for (let index = 0; index < numbers.length; index++) {
     const element = numbers[index];
@@ -37,4 +38,4 @@ const team = [
     },
   ];
 
-console.log(team.every(i => i['age'] <=15));
+console.log(team.every(i => i['age'] <=15));//false
