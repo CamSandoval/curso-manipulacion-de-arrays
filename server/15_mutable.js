@@ -18,6 +18,7 @@ console.log("-".repeat(10));
 const index = products.findIndex(item=> item.id=== '🍔');
 if(index != -1) {
     myProducts.push(products[index]);
+    //Splice es un metodo que elimuna productos de un array, este recibe como parametros el indice el primer elemento a eliminar y la cantidad de elementos que se quiere eliminar
     products.splice(index,1);
 }
 
@@ -36,7 +37,7 @@ const products2 = [
 
 const myProducts2 = products2.filter(i=> i.id ==='🍔');
 console.log(myProducts2);//[ { title: 'Burger', price: 121, id: '🍔' } ]
-
+console.log("-".repeat(10));
 
 //Actualizar valores del array mutando el original
 const update = {
@@ -56,6 +57,7 @@ products2[index2]={
 console.log(products2);/*[ { title: 'Pizza', price: 121, id: '🍕' },
 { title: 'Burger', price: 121, id: '🍔' },
 { title: 'Hot cakes', price: 200, id: '🥞', description: 'delicioso' } ]*/
+console.log("-".repeat(10));
 
 //Actualizando valores sin mutar
 const products3 = [
@@ -71,6 +73,24 @@ const update2 = {
         description:'delicioso'
     }
 }
+
+const ids = products3.filter(i=>i.id === update2.id);
+ids[0]={
+    ...ids[0],
+    ...update.changes
+}
+
+//Erores
+// ids = {
+//     ...ids,
+//     ...update2.changes
+// }
+// const change = products3[ids];
+// change ={
+//     ...change[ids],
+//     ...update2.changes
+// }
+console.log('repaso',ids);
 
 const index3= products3.findIndex(item=> item.id === update2.id);
 
